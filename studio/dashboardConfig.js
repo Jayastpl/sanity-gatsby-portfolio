@@ -1,57 +1,65 @@
 export default {
   widgets: [
-    {
-      name: 'sanity-tutorials',
-      options: {
-        templateRepoId: 'sanity-io/sanity-template-gatsby-portfolio'
-      }
-    },
-    {name: 'structure-menu'},
-    {
-      name: 'project-info',
+    // { name: "structure-menu" },
+    /*{
+      name: "project-info",
       options: {
         __experimental_before: [
           {
-            name: 'netlify',
+            name: "netlify",
             options: {
               description:
-                'NOTE: Because these sites are static builds, they need to be re-deployed to see the changes when documents are published.',
+                "NOTE: Because these sites are static builds, they need to be re-deployed to see the changes when documents are published.",
               sites: [
                 {
-                  buildHookId: '60bde260f1071176ff10d078',
-                  title: 'Sanity Studio',
-                  name: 'sanity-gatsby-portfolio-studio-hs2f7g1p',
-                  apiId: '930d335e-c47e-40e8-b521-06ddf951d8e4'
+                  buildHookId:
+                    "6051ebc6ec41917e14fa5e67",
+                  title: "Sanity Studio",
+                  name: "camp-build-studio",
+                  apiId: "d36955f6-2127-4241-a434-d0341fa1a551",
                 },
                 {
-                  buildHookId: '60bde260c609841eac849717',
-                  title: 'Portfolio Website',
-                  name: 'sanity-gatsby-portfolio-web-yic53z4f',
-                  apiId: 'ee0c127d-bb78-4b32-882f-a828bc03a067'
-                }
-              ]
-            }
-          }
+                  buildHookId: "6051ebc6391e9277c136332c",
+                  title: "Blog Website",
+                  name: "camp-build",
+                  apiId: "257b22a0-92fd-480c-bbeb-e0ab0d415ff5",
+                },
+              ],
+            },
+          },
         ],
         data: [
           {
-            title: 'GitHub repo',
-            value: 'https://github.com/Jayastpl/sanity-gatsby-portfolio',
-            category: 'Code'
+            title: "GitHub repo",
+            value:
+              "https://github.com/ankitrathi1/Camp-Build",
+            category: "Code",
           },
           {
-            title: 'Frontend',
-            value: 'https://sanity-gatsby-portfolio-web-yic53z4f.netlify.app',
-            category: 'apps'
-          }
-        ]
-      }
-    },
-    {name: 'project-users', layout: {height: 'auto'}},
+            title: "Frontend",
+            value: "https://camp-build.netlify.app",
+            category: "apps",
+          },
+        ],
+      },
+    },*/
+    //{ name: "project-users", layout: { height: "auto" } },
+    { name: "create-new-campaign" ,
+    layout: { width: "full" },
+   },
     {
-      name: 'document-list',
-      options: {title: 'Recent projects', order: '_createdAt desc', types: ['sampleProject']},
-      layout: {width: 'medium'}
-    }
-  ]
-}
+      name: "document-list",
+      options: {
+        title: "My Campaigns",
+        order: "_createdAt desc",
+     
+        query: '*[_type == "campaign"]',
+        createButtonText: 'Create new Campaign123',
+        showCreateButton: false,
+       
+      },
+      layout: { width: "full" },
+    },
+  ],
+};
+

@@ -1,34 +1,33 @@
+import {FaImage} from 'react-icons/fa'
+
 export default {
   name: 'figure',
   title: 'Image',
+  icon: FaImage,
   type: 'image',
+  description: 'Upload image from your computer, TAB, or paste image fom clipboard',
   options: {
     hotspot: true
   },
   fields: [
     {
-      title: 'Caption',
-      name: 'caption',
-      type: 'string',
-      options: {
-        isHighlighted: true
-      }
-    },
-    {
       name: 'alt',
+      title: 'Alt Text',
+      description: 'For accessibility purposes, please describe the image',
       type: 'string',
-      title: 'Alternative text',
-      validation: Rule => Rule.error('You have to fill out the alternative text.').required(),
-      description: 'Important for SEO and accessiblity.',
+     // validation: Rule => Rule.required("Please provide alt text for Image"),
+     /*validation: Rule => Rule.custom(val => {
+     
+      if (!val ) {
+        return 'Please Provide Alt Text For Image'
+      }
+     else{
+       return true
+     }
+    }),*/
       options: {
         isHighlighted: true
       }
     }
-  ],
-  preview: {
-    select: {
-      imageUrl: 'asset.url',
-      title: 'caption'
-    }
-  }
+  ]
 }
